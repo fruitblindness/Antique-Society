@@ -1,0 +1,1 @@
+"use strict";$(document).ready(function(){skrollr.init({forceHeight:!1});$(".lots").slick({autoplay:!0,arrows:!1,dots:!0,fade:!0,autoplaySpeed:4e3}),$(".lots").on("init",function(){var i=$(this);$(".slick-dots li a").on("click",function(){i.slick("slickPause")})})});

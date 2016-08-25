@@ -1,0 +1,154 @@
+/* =============================================================
+* Generic Nav Styling
+* =============================================================*/
+
+.nav-wrapper {
+  background: $colour__dark-brown;
+
+  min-height: $nav__height--mobile;
+  width: 100%;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  z-index: 1;
+}
+
+.menu {
+  @extend %reset;
+  text-align: center;
+  padding: 1rem;
+
+  li a {
+    display: block;
+    padding: 0.6rem;
+    font-size: 1.3rem;
+    letter-spacing: 3px;
+
+    color: $colour__light-brown;
+
+    text-decoration: none;
+
+    &:focus,
+    &:hover {
+      color: $colour__white;
+    }
+  }
+}
+
+.navbar {
+  text-transform: uppercase;
+  position: relative;
+  font-family: $font__heading;
+
+  input[type="checkbox"] {
+    display: none;
+  }
+}
+
+/* =============================================================
+* Mobile Menu
+* =============================================================*/
+
+.mobile-nav {
+  position: absolute;
+  top: 14px;
+  right: 15px;
+
+  cursor: pointer;
+
+  // height: 30px;
+  width: 30px;
+
+  background: none;
+  border: none;
+  appearance: none;
+
+  &:focus {
+    outline: none;
+  }
+
+  div {
+    background: $colour__light-brown;
+    width: 100%;
+    height: 2px;
+
+    &+div {
+      margin-top: 5px;
+    }
+  }
+}
+
+// Menu-active state
+input#menu-toggle:checked + label + .menu {
+  display: block;
+
+  position: fixed;
+  top: $nav__height--mobile; right: 0; bottom: 0; left: 0;
+  overflow: scroll;
+
+  background: rgba($colour__dark-brown, 0.98);
+}
+
+.menu {
+  display: none;
+}
+
+.wordmark {
+  color: $colour__white;
+  display: none;
+}
+
+/* =============================================================
+* Desktop Menu
+* =============================================================*/
+
+@include media($desktop) {
+
+  .mobile-nav {
+    display: none;
+  }
+
+  .nav-wrapper {
+    top: 0;
+    height: $nav__height--desktop;
+  }
+
+  .navbar {
+    @include outer-container();
+    padding: $container__padding;
+  }
+
+  .wordmark {
+    display: block;
+    float: left;
+    font-size: 1.3rem;
+    padding: 0.95rem 0;
+  }
+
+  .menu {
+    float: right;
+    display: block;
+    padding: 0;
+
+    li {
+      display: inline-block;
+
+      &:first-child,
+      &:last-child {
+        display: none;
+      }
+    }
+
+    li a {
+      font-size: 0.8rem;
+      padding: 1.2rem 0.4rem;
+      letter-spacing: 1px;
+
+      &:focus {
+        color: $colour__light-brown;
+      }
+    }
+  }
+}

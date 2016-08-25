@@ -1,0 +1,36 @@
+/* =============================================================
+* Colours
+* =============================================================*/
+
+$colour__light-brown : #988468;
+$colour__dark-brown  : #1d1e1e;
+
+$colour__white       : #f3f3f3;
+$colour__off-white   : #f3f3f3;
+$colour__black       : #1a1a1a;
+$colour__mid-grey    : #666666;
+$colour__light-grey  : #cecece;
+
+$colour__background  : #95a2a8;
+
+/* =============================================================
+* Typography
+* =============================================================*/
+
+$font__body: 'Avenir', Tahoma, sans-serif;
+$font__heading: 'Palatino', Palatino, serif;
+$font__utility: 'Swiss721BT', Arial, sans-serif;
+
+/* =============================================================
+* Sizings
+* =============================================================*/
+
+$nav__height--mobile: 45px;
+$nav__height--desktop: 50px;
+$container__padding: 0 1.5rem;
+
+/* =============================================================
+* Media Queries
+* =============================================================*/
+
+$desktop : 1170px;

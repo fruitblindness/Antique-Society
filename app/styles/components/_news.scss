@@ -1,0 +1,152 @@
+.news {
+  text-align: center;
+  padding-top: 3rem;
+
+  @include clearfix;
+
+  > header {
+    margin-bottom: 2rem;
+
+    position: relative;
+
+    &:after {
+      content: '';
+
+      width: 5rem;
+      height: 1px;
+
+      background: rgba($colour__light-brown, 0.4);
+
+      position: absolute;
+      bottom: -1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  h2 {
+    font-family: $font__body;
+    font-weight: normal;
+    color: $colour__light-brown;
+    font-size: 0.8rem;
+  }
+}
+
+.button {
+  color: $colour__light-brown;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: normal;
+  text-align: left;
+  letter-spacing: 1px;
+  line-height: 1.5;
+
+  position: relative;
+
+  min-width: 180px;
+
+  margin-top: 1.5rem;
+
+  border: 2px solid $colour__light-brown;
+
+  display: inline-block;
+  padding: 0.6rem 1.3rem 0.55rem;
+
+  transition: 0.3s ease-out all;
+
+  &:after {
+    content: '^';
+    font-size: 1.1rem;
+    font-weight: 300;
+
+    color: $colour__light-brown;
+
+    position: absolute;
+    top: 34%; right: 25px;
+    transform: rotate(90deg) translateX(-50%) scaleX(1.5);
+  }
+
+  &:hover {
+    background: $colour__light-brown;
+    color: $colour__white;
+
+    &:after {
+      color: $colour__white;
+    }
+  }
+}
+
+.news-item {
+  padding-top: 2rem;
+
+  @include media(max-width $tablet) {
+    &:nth-of-type(n+2) {
+      display: none;
+    }
+  }
+
+  @include media(min-width $tablet max-width $desktop) {
+    @include span-columns(6);
+    @include omega(3n);
+
+    &:nth-of-type(3) {
+      display: none;
+    }
+  }
+
+  @include media($desktop) {
+    @include span-columns(4);
+    @include omega(4n);
+
+    text-align: left;
+  }
+
+  h3 {
+    margin-top: 0.5rem;
+
+    font-size: 1.7rem;
+  }
+
+  .date {
+    color: $colour__light-brown;
+    font-family: $font__heading;
+    font-size: 2rem;
+    text-transform: uppercase;
+
+    sup {
+      font-size: 0.8rem;
+
+      top: -0.8rem;
+    }
+
+    .thin {
+      bottom: 0;
+
+      font-size: 2rem;
+    }
+
+    .year {
+      color: $colour__light-grey;
+    }
+  }
+
+  .description {
+    font-size: 0.9rem;
+    color: $colour__mid-grey;
+
+    padding: 0 0rem;
+
+    line-height: 1.5;
+
+    .button {
+      display: none;
+
+      @include media($tablet) {
+        display: inline-block;
+      }
+    }
+  }
+
+
+}

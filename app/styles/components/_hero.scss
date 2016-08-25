@@ -1,0 +1,136 @@
+/* =============================================================
+* Portrait Hero
+* =============================================================*/
+
+.hero-wrapper {
+  background: url('../images/mobile_hero.jpg') 50% 50% / contain no-repeat;
+  background-color: $colour__background;
+
+  position: relative;
+}
+
+.hero {
+  min-height: 100vh;
+  padding:  $nav__height--mobile 1.5rem 1rem;
+
+  position: relative;
+
+  h1 {
+    color: $colour__white;
+    max-width: 5em;
+  }
+
+  .standfirst {
+    display: none;
+  }
+
+  .reference {
+    position: absolute;
+    bottom: 3rem; left:50%;
+    transform: translateX(-50%);
+
+    width: 100%;
+
+    text-align: center;
+
+    color: $colour__mid-grey;
+
+    .date {
+      color: $colour__white;
+    }
+  }
+
+  &:after {
+    content: '^';
+    font-size: 1.2rem;
+
+    color: $colour__white;
+
+    position: absolute;
+    bottom: 0.9rem;
+    left: 50%;
+    transform: translateX(-50%) scaleY(-1) scaleX(1.5);;
+  }
+}
+
+/* =============================================================
+* Desktop Menu
+* =============================================================*/
+
+@media screen and (min-width: $desktop),
+screen and (orientation: landscape) {
+
+  .hero-wrapper {
+    background: $colour__background;
+  }
+
+  .hero {
+    @include outer-container();
+    background: url('../images/desktop_hero.jpg') 50% 50% / cover no-repeat;
+    height: 100vh;
+
+    h1 {
+      position: relative;
+      margin-top: 0;
+      font-size: 1.2em;
+
+      &:after {
+        content: '';
+
+        width: 5rem;
+        height: 1px;
+
+        background: rgba($colour__white, 0.4);
+
+        position: absolute;
+        bottom: -0.5rem;
+        left: 0;
+      }
+    }
+
+    .reference {
+      bottom: 1rem;
+      left: 0;
+      transform: none;
+      color: $colour__black;
+    }
+
+    .standfirst {
+      display: block;
+      font-family: $font__heading;
+      font-size: 0.6em;
+      max-width: 11em;
+    }
+  }
+
+  .hero-content {
+    @include span-columns(5.7);
+    @include shift(6.3);
+
+    display: table;
+
+    height: 100%;
+    color: $colour__black;
+
+    position: relative;
+
+    .primary-content {
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+}
+
+@include media($desktop) {
+  .hero {
+    h1 {
+      font-size: 5rem;
+    }
+    .standfirst {
+      font-size: 1.8rem;
+    }
+    .reference {
+      bottom: 3rem;
+    }
+  }
+}

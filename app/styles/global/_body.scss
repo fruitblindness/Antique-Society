@@ -1,0 +1,14 @@
+.tablet-hidden {
+  @include media($tablet) {
+    &.tablet-hidden {
+      display: none;
+    }
+  }
+}
+
+.container {
+  @include media($desktop) {
+    @include outer-container();
+    padding: $container__padding;
+  }
+}

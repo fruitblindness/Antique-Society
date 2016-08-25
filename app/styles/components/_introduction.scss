@@ -1,0 +1,121 @@
+.introduction {
+  text-align: center;
+
+  margin-bottom: 3rem;
+
+  h2 {
+    max-width: 10em;
+    margin: 0 auto;
+
+    @include media($desktop) {
+      font-size: 3em;
+    }
+  }
+
+  header {
+    margin-bottom: 2rem;
+
+    position: relative;
+
+    &:after {
+      content: '';
+
+      width: 5rem;
+      height: 1px;
+
+      background: rgba($colour__light-brown, 0.4);
+
+      position: absolute;
+      bottom: -2rem;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  .copy {
+    padding-top: 2rem;
+    font-family: $font__heading;
+    color: $colour__mid-grey;
+    font-size: 1.1rem;
+    max-width: 35em;
+    margin: 0 auto;
+
+    @include media($desktop) {
+      font-size: 1.8em;
+    }
+  }
+}
+
+.lots {
+  margin: 2rem 0 0;
+
+  img {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .reference {
+    .date {
+      color: $colour__light-brown;
+    }
+  }
+
+  .lot {
+    position: relative;
+    &:before {
+      font-size: 3rem;
+      color: $colour__off-white;
+      background: $colour__light-brown;
+      border-radius: 50%;
+      padding: 1rem;
+      width: 80px; height: 80px;
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    @for $i from 1 through 3 {
+      &:nth-of-type(#{$i}) {
+        &:before {
+          content: '#{$i}';
+        }
+      }
+    }
+  }
+
+  .slick-dots {
+    @extend %reset;
+
+    margin-top: 2rem;
+
+    li {
+      display: inline;
+
+      button {
+        color: transparent;
+        background: $colour__light-brown;
+        border: none;
+
+        padding: 0;
+
+        width: 10px;
+        height: 10px;
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      &+li {
+        margin-left: 2rem;
+      }
+
+      &.slick-active {
+        button {
+          box-shadow: 0 0 0 2px $colour__off-white, 0 0 0 3px $colour__light-brown;
+        }
+      }
+    }
+  }
+}

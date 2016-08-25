@@ -1,0 +1,31 @@
+/* =============================================================
+* Mixin Libraries
+* =============================================================*/
+@import 'libs/bourbon/bourbon';
+@import 'libs/neat/neat';
+@import 'libs/normalize/normalize';
+@import 'libs/extends';
+@import 'libs/slick';
+
+/* =============================================================
+* Settings
+* =============================================================*/
+@import 'settings/font-imports';
+@import 'settings/variables';
+@import 'settings/media-queries';
+
+/* =============================================================
+* Global Styles
+* =============================================================*/
+@import 'global/typography';
+@import 'global/body';
+
+/* =============================================================
+* Components
+* =============================================================*/
+@import 'components/navbar';
+@import 'components/hero';
+@import 'components/content';
+@import 'components/introduction';
+@import 'components/news';
+@import 'components/footer';

@@ -1,0 +1,60 @@
+body {
+  font-family: $font__body;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  color: $colour__black;
+  font-size: 5vw;
+
+  @include media($desktop) {
+    font-size: 16px;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font__heading;
+  text-transform: uppercase;
+  font-weight: 300;
+  line-height: 1;
+
+  .lower {
+    text-transform: none;
+  }
+}
+
+.date {
+  font-weight: normal;
+}
+
+h1 .lower {
+  font-size: 0.8em;
+  display: block;
+}
+
+sub {
+  bottom: 0;
+  font-size: 1em;
+}
+
+.thin {
+  font-family: $font__utility;
+  font-size: 1.5rem;
+  position: relative;
+  bottom: -0.25rem;
+  right: -0.05rem;
+}
+
+.reference {
+  font-family: $font__body;
+  margin: 0 auto;
+
+  font-size: 0.7rem;
+  line-height: 1.2;
+
+  width: 100%;
+
+  text-align: center;
+
+  color: $colour__mid-grey;
+
+  max-width: 280px;
+}
