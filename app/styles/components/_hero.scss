@@ -68,6 +68,7 @@ screen and (orientation: landscape) {
     @include outer-container();
     background: url('../images/desktop_hero.jpg') 50% 50% / cover no-repeat;
     height: 100vh;
+    max-height: 900px;
 
     h1 {
       position: relative;
